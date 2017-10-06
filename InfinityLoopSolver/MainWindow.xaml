@@ -1,0 +1,161 @@
+﻿<Window x:Class="InfinityLoopSolver.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:InfinityLoopSolver"
+        mc:Ignorable="d"
+        ResizeMode="NoResize"
+        Title="Infinity Loop Solver" Height="350" Width="525">
+    <Grid>
+        <Grid Name="GameBoard" HorizontalAlignment="Left" Height="299" Margin="329,10,0,0" VerticalAlignment="Top" Width="184">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="23"/>
+                <RowDefinition Height="23"/>
+                <RowDefinition Height="23"/>
+                <RowDefinition Height="23"/>
+                <RowDefinition Height="23"/>
+                <RowDefinition Height="23"/>
+                <RowDefinition Height="23"/>
+                <RowDefinition Height="23"/>
+                <RowDefinition Height="23"/>
+                <RowDefinition Height="23"/>
+                <RowDefinition Height="23"/>
+                <RowDefinition Height="23"/>
+                <RowDefinition Height="23"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="23"/>
+                <ColumnDefinition Width="23"/>
+                <ColumnDefinition Width="23"/>
+                <ColumnDefinition Width="23"/>
+                <ColumnDefinition Width="23"/>
+                <ColumnDefinition Width="23"/>
+                <ColumnDefinition Width="23"/>
+                <ColumnDefinition Width="23"/>
+            </Grid.ColumnDefinitions>
+            <Button Name="GameItemButton_1_13" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23"/>
+            <Button Name="GameItemButton_2_13" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Column="1"/>
+            <Button Name="GameItemButton_3_13" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Column="2"/>
+            <Button Name="GameItemButton_4_13" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Column="3"/>
+            <Button Name="GameItemButton_5_13" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Column="4"/>
+            <Button Name="GameItemButton_6_13" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Column="5"/>
+            <Button Name="GameItemButton_7_13" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Column="6"/>
+            <Button Name="GameItemButton_8_13" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Column="7"/>
+            <Button Name="GameItemButton_8_12" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Column="7" Grid.Row="1"/>
+            <Button Name="GameItemButton_7_12" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Column="6" Grid.Row="1"/>
+            <Button Name="GameItemButton_6_12" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Column="5" Grid.Row="1"/>
+            <Button Name="GameItemButton_5_12" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Column="4" Grid.Row="1"/>
+            <Button Name="GameItemButton_4_12" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Column="3" Grid.Row="1"/>
+            <Button Name="GameItemButton_3_12" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Column="2" Grid.Row="1"/>
+            <Button Name="GameItemButton_2_12" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Column="1" Grid.Row="1"/>
+            <Button Name="GameItemButton_1_12" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Row="1"/>
+            <Button Name="GameItemButton_1_11" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Row="2"/>
+            <Button Name="GameItemButton_2_11" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Column="1" Grid.Row="2"/>
+            <Button Name="GameItemButton_3_11" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Column="2" Grid.Row="2"/>
+            <Button Name="GameItemButton_4_11" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Column="3" Grid.Row="2"/>
+            <Button Name="GameItemButton_5_11" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Column="4" Grid.Row="2"/>
+            <Button Name="GameItemButton_6_11" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Column="5" Grid.Row="2"/>
+            <Button Name="GameItemButton_7_11" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Column="6" Grid.Row="2"/>
+            <Button Name="GameItemButton_8_11" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Column="7" Grid.Row="2"/>
+            <Button Name="GameItemButton_8_10" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Column="7" Grid.Row="3"/>
+            <Button Name="GameItemButton_7_10" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Column="6" Grid.Row="3"/>
+            <Button Name="GameItemButton_6_10" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Column="5" Grid.Row="3"/>
+            <Button Name="GameItemButton_5_10" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Column="4" Grid.Row="3"/>
+            <Button Name="GameItemButton_4_10" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Column="3" Grid.Row="3"/>
+            <Button Name="GameItemButton_3_10" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Column="2" Grid.Row="3"/>
+            <Button Name="GameItemButton_2_10" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Column="1" Grid.Row="3"/>
+            <Button Name="GameItemButton_1_10" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Row="3"/>
+            <Button Name="GameItemButton_1_9" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Row="4"/>
+            <Button Name="GameItemButton_2_9" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Column="1" Grid.Row="4"/>
+            <Button Name="GameItemButton_3_9" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Column="2" Grid.Row="4"/>
+            <Button Name="GameItemButton_4_9" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Column="3" Grid.Row="4"/>
+            <Button Name="GameItemButton_5_9" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Column="4" Grid.Row="4"/>
+            <Button Name="GameItemButton_6_9" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Column="5" Grid.Row="4"/>
+            <Button Name="GameItemButton_7_9" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Column="6" Grid.Row="4"/>
+            <Button Name="GameItemButton_8_9" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Column="7" Grid.Row="4"/>
+            <Button Name="GameItemButton_8_8" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Column="7" Grid.Row="5"/>
+            <Button Name="GameItemButton_7_8" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Column="6" Grid.Row="5"/>
+            <Button Name="GameItemButton_6_8" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Column="5" Grid.Row="5"/>
+            <Button Name="GameItemButton_5_8" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Column="4" Grid.Row="5"/>
+            <Button Name="GameItemButton_4_8" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Column="3" Grid.Row="5"/>
+            <Button Name="GameItemButton_3_8" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Column="2" Grid.Row="5"/>
+            <Button Name="GameItemButton_2_8" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Column="1" Grid.Row="5"/>
+            <Button Name="GameItemButton_1_8" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Row="5"/>
+            <Button Name="GameItemButton_1_7" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Row="6"/>
+            <Button Name="GameItemButton_2_7" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Column="1" Grid.Row="6"/>
+            <Button Name="GameItemButton_3_7" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Column="2" Grid.Row="6"/>
+            <Button Name="GameItemButton_4_7" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Column="3" Grid.Row="6"/>
+            <Button Name="GameItemButton_5_7" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Column="4" Grid.Row="6"/>
+            <Button Name="GameItemButton_6_7" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Column="5" Grid.Row="6"/>
+            <Button Name="GameItemButton_7_7" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Column="6" Grid.Row="6"/>
+            <Button Name="GameItemButton_8_7" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Column="7" Grid.Row="6"/>
+            <Button Name="GameItemButton_8_6" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Column="7" Grid.Row="7"/>
+            <Button Name="GameItemButton_7_6" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Column="6" Grid.Row="7"/>
+            <Button Name="GameItemButton_6_6" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Column="5" Grid.Row="7"/>
+            <Button Name="GameItemButton_5_6" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Column="4" Grid.Row="7"/>
+            <Button Name="GameItemButton_4_6" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Column="3" Grid.Row="7"/>
+            <Button Name="GameItemButton_3_6" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Column="2" Grid.Row="7"/>
+            <Button Name="GameItemButton_2_6" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Column="1" Grid.Row="7"/>
+            <Button Name="GameItemButton_1_6" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Row="7"/>
+            <Button Name="GameItemButton_5_5" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Column="4" Grid.Row="8"/>
+            <Button Name="GameItemButton_4_5" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Column="3" Grid.Row="8"/>
+            <Button Name="GameItemButton_3_5" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Column="2" Grid.Row="8"/>
+            <Button Name="GameItemButton_2_5" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Column="1" Grid.Row="8"/>
+            <Button Name="GameItemButton_1_5" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Row="8"/>
+            <Button Name="GameItemButton_6_5" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Column="5" Grid.Row="8"/>
+            <Button Name="GameItemButton_7_5" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Column="6" Grid.Row="8"/>
+            <Button Name="GameItemButton_8_5" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Column="7" Grid.Row="8"/>
+            <Button Name="GameItemButton_8_4" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Column="7" Grid.Row="9"/>
+            <Button Name="GameItemButton_7_4" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Column="6" Grid.Row="9"/>
+            <Button Name="GameItemButton_6_4" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Column="5" Grid.Row="9"/>
+            <Button Name="GameItemButton_5_4" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Column="4" Grid.Row="9"/>
+            <Button Name="GameItemButton_4_4" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Column="3" Grid.Row="9"/>
+            <Button Name="GameItemButton_3_4" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Column="2" Grid.Row="9"/>
+            <Button Name="GameItemButton_2_4" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Column="1" Grid.Row="9"/>
+            <Button Name="GameItemButton_1_4" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Row="9"/>
+            <Button Name="GameItemButton_8_3" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Column="7" Grid.Row="10"/>
+            <Button Name="GameItemButton_7_3" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Column="6" Grid.Row="10"/>
+            <Button Name="GameItemButton_6_3" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Column="5" Grid.Row="10"/>
+            <Button Name="GameItemButton_5_3" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Column="4" Grid.Row="10"/>
+            <Button Name="GameItemButton_4_3" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Column="3" Grid.Row="10"/>
+            <Button Name="GameItemButton_3_3" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Column="2" Grid.Row="10"/>
+            <Button Name="GameItemButton_2_3" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Column="1" Grid.Row="10"/>
+            <Button Name="GameItemButton_1_3" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Row="10"/>
+            <Button Name="GameItemButton_1_2" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Row="11"/>
+            <Button Name="GameItemButton_8_1" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Column="7" Grid.Row="12"/>
+            <Button Name="GameItemButton_7_1" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Column="6" Grid.Row="12"/>
+            <Button Name="GameItemButton_6_1" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Column="5" Grid.Row="12"/>
+            <Button Name="GameItemButton_5_1" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Column="4" Grid.Row="12"/>
+            <Button Name="GameItemButton_4_1" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Column="3" Grid.Row="12"/>
+            <Button Name="GameItemButton_3_1" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Column="2" Grid.Row="12"/>
+            <Button Name="GameItemButton_2_1" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Column="1" Grid.Row="12"/>
+            <Button Name="GameItemButton_1_1" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Row="12"/>
+            <Button Name="GameItemButton_8_2" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Column="7" Grid.Row="11"/>
+            <Button Name="GameItemButton_7_2" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Column="6" Grid.Row="11"/>
+            <Button Name="GameItemButton_6_2" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Column="5" Grid.Row="11"/>
+            <Button Name="GameItemButton_5_2" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Column="4" Grid.Row="11"/>
+            <Button Name="GameItemButton_4_2" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Column="3" Grid.Row="11"/>
+            <Button Name="GameItemButton_3_2" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Column="2" Grid.Row="11"/>
+            <Button Name="GameItemButton_2_2" Click="AnyGameItemButtonClicked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="23" Height="23" Grid.Column="1" Grid.Row="11"/>
+        </Grid>
+        <Button Name="MoveUpButton" Click="MoveUpButton_OnClick" Content="Move Up" HorizontalAlignment="Left" Margin="217,10,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Name="MoveDownButton" Click="MoveDownButton_OnClick" Content="Move Down" HorizontalAlignment="Left" Margin="217,35,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Name="MoveRightButton" Click="MoveRightButton_OnClick" Content="Move Right" HorizontalAlignment="Left" Margin="217,60,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button Name="MoveLeftButton" Click="MoveLeftButton_OnClick" Content="Move Left" HorizontalAlignment="Left" Margin="217,85,0,0" VerticalAlignment="Top" Width="75"/>
+        <RadioButton Name="SelectStraight" HorizontalAlignment="Left" Margin="217,143,0,0" VerticalAlignment="Top" Height="16" Width="16"/>
+        <Image Source="/Resources/StraightThing-12.png" HorizontalAlignment="Left" Height="23" Margin="237,136,0,0" VerticalAlignment="Top" Width="23"/>
+        <RadioButton Name="SelectOneDir" HorizontalAlignment="Left" Margin="217,171,0,0" VerticalAlignment="Top" Height="16" Width="16"/>
+        <Image Source="/Resources/OneDirectionalThing-8.png" HorizontalAlignment="Left" Height="23" Margin="237,164,0,0" VerticalAlignment="Top" Width="23"/>
+        <RadioButton Name="SelectTwoDir" HorizontalAlignment="Left" Margin="217,199,0,0" VerticalAlignment="Top" Height="16" Width="16"/>
+        <Image Source="/Resources/TwoDirectionalThing-9.png" HorizontalAlignment="Left" Height="23" Margin="237,192,0,0" VerticalAlignment="Top" Width="23"/>
+        <RadioButton Name="SelectFourDir" HorizontalAlignment="Left" Margin="217,227,0,0" VerticalAlignment="Top" Height="16" Width="16"/>
+        <Image Source="/Resources/FourDirectionalThing-15.png" HorizontalAlignment="Left" Height="23" Margin="237,220,0,0" VerticalAlignment="Top" Width="23"/>
+        <RadioButton Name="SelectThreeDir" HorizontalAlignment="Left" Margin="217,255,0,0" VerticalAlignment="Top" Height="16" Width="16"/>
+        <Image Source="/Resources/ThreeDirectionalThing-11.png" HorizontalAlignment="Left" Height="23" Margin="237,248,0,0" VerticalAlignment="Top" Width="23"/>
+        <RadioButton x:Name="SelectRubber" HorizontalAlignment="Left" Margin="217,283,0,0" VerticalAlignment="Top" Height="16" Width="16"/>
+        <Image Source="/Resources/eraser.png" HorizontalAlignment="Left" Height="23" Margin="237,276,0,0" VerticalAlignment="Top" Width="23"/>
+        <Button Name="SolveButton" Click="SolveButton_OnClick" Content="Solve this shit" HorizontalAlignment="Left" Margin="112,60,0,0" VerticalAlignment="Top" Width="100"/>
+        <Button Name="ClearAllButton" Click="ClearAllButton_OnClick" Content="Clean everything" HorizontalAlignment="Left" Margin="112,85,0,0" VerticalAlignment="Top" Width="100"/>
+    </Grid>
+</Window>
