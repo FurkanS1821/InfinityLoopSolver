@@ -59,6 +59,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Direction.cs" />
     <Compile Include="Extensions.cs" />
     <Compile Include="GameItems\FourDirectionalThing.cs" />
     <Compile Include="GameItems\IGameItem.cs" />
@@ -117,52 +118,52 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\FourDirectionalThing-15.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\OneDirectionalThing-1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\OneDirectionalThing-2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\OneDirectionalThing-4.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\OneDirectionalThing-8.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\StraightThing-3.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\StraightThing-12.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\ThreeDirectionalThing-7.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\ThreeDirectionalThing-11.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\ThreeDirectionalThing-13.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\ThreeDirectionalThing-14.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\TwoDirectionalThing-5.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\TwoDirectionalThing-6.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\TwoDirectionalThing-9.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\TwoDirectionalThing-10.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\eraser.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\9.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\10.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\12.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\13.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\14.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\15.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

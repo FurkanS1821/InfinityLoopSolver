@@ -11,7 +11,7 @@ namespace InfinityLoopSolver.GameItems
         /// </summary>
         public abstract byte DirectionFlags { get; set; }
 
-        public abstract byte[] PossibleDirections { get; }
+        public abstract byte[] PossibleDirections { get; set; }
         public abstract uint ItemId { get; }
 
         public static bool operator ==(IGameItem left, IGameItem right)

@@ -144,15 +144,15 @@
         <Button Name="MoveRightButton" Click="MoveRightButton_OnClick" Content="Move Right" HorizontalAlignment="Left" Margin="217,60,0,0" VerticalAlignment="Top" Width="75"/>
         <Button Name="MoveLeftButton" Click="MoveLeftButton_OnClick" Content="Move Left" HorizontalAlignment="Left" Margin="217,85,0,0" VerticalAlignment="Top" Width="75"/>
         <RadioButton Name="SelectStraight" HorizontalAlignment="Left" Margin="217,143,0,0" VerticalAlignment="Top" Height="16" Width="16"/>
-        <Image Source="/Resources/StraightThing-12.png" HorizontalAlignment="Left" Height="23" Margin="237,136,0,0" VerticalAlignment="Top" Width="23"/>
+        <Image Source="/Resources/12.png" HorizontalAlignment="Left" Height="23" Margin="237,136,0,0" VerticalAlignment="Top" Width="23"/>
         <RadioButton Name="SelectOneDir" HorizontalAlignment="Left" Margin="217,171,0,0" VerticalAlignment="Top" Height="16" Width="16"/>
-        <Image Source="/Resources/OneDirectionalThing-8.png" HorizontalAlignment="Left" Height="23" Margin="237,164,0,0" VerticalAlignment="Top" Width="23"/>
+        <Image Source="/Resources/8.png" HorizontalAlignment="Left" Height="23" Margin="237,164,0,0" VerticalAlignment="Top" Width="23"/>
         <RadioButton Name="SelectTwoDir" HorizontalAlignment="Left" Margin="217,199,0,0" VerticalAlignment="Top" Height="16" Width="16"/>
-        <Image Source="/Resources/TwoDirectionalThing-9.png" HorizontalAlignment="Left" Height="23" Margin="237,192,0,0" VerticalAlignment="Top" Width="23"/>
+        <Image Source="/Resources/9.png" HorizontalAlignment="Left" Height="23" Margin="237,192,0,0" VerticalAlignment="Top" Width="23"/>
         <RadioButton Name="SelectFourDir" HorizontalAlignment="Left" Margin="217,227,0,0" VerticalAlignment="Top" Height="16" Width="16"/>
-        <Image Source="/Resources/FourDirectionalThing-15.png" HorizontalAlignment="Left" Height="23" Margin="237,220,0,0" VerticalAlignment="Top" Width="23"/>
+        <Image Source="/Resources/15.png" HorizontalAlignment="Left" Height="23" Margin="237,220,0,0" VerticalAlignment="Top" Width="23"/>
         <RadioButton Name="SelectThreeDir" HorizontalAlignment="Left" Margin="217,255,0,0" VerticalAlignment="Top" Height="16" Width="16"/>
-        <Image Source="/Resources/ThreeDirectionalThing-11.png" HorizontalAlignment="Left" Height="23" Margin="237,248,0,0" VerticalAlignment="Top" Width="23"/>
+        <Image Source="/Resources/11.png" HorizontalAlignment="Left" Height="23" Margin="237,248,0,0" VerticalAlignment="Top" Width="23"/>
         <RadioButton x:Name="SelectRubber" HorizontalAlignment="Left" Margin="217,283,0,0" VerticalAlignment="Top" Height="16" Width="16"/>
         <Image Source="/Resources/eraser.png" HorizontalAlignment="Left" Height="23" Margin="237,276,0,0" VerticalAlignment="Top" Width="23"/>
         <Button Name="SolveButton" Click="SolveButton_OnClick" Content="Solve this shit" HorizontalAlignment="Left" Margin="112,60,0,0" VerticalAlignment="Top" Width="100"/>

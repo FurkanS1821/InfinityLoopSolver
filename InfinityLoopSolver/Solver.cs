@@ -11,34 +11,34 @@ namespace InfinityLoopSolver
         {
             foreach (var item in items)
             {
-                if ((item.DirectionFlags & 8) == 8) // item is looking up
+                if (item.IsLookingAt(Direction.Up))
                 {
-                    var otherItem = items.FirstOrDefault(x => x.Position == new Vector2(item.Position.X, item.Position.Y + 1));
-                    if (otherItem == null || (otherItem.DirectionFlags & 4) != 4) // other item should exist and be looking down
+                    var otherItem = items.FirstOrDefault(x => x.Position == item.Position + new Vector2(0, 1));
+                    if (otherItem == null || !otherItem.IsLookingAt(Direction.Down))
                     {
                         return false;
                     }
                 }
-                if ((item.DirectionFlags & 4) == 4) // item is looking down
+                if (item.IsLookingAt(Direction.Down))
                 {
-                    var otherItem = items.FirstOrDefault(x => x.Position == new Vector2(item.Position.X, item.Position.Y - 1));
-                    if (otherItem == null || (otherItem.DirectionFlags & 8) != 8) // other item should exist and be looking up
+                    var otherItem = items.FirstOrDefault(x => x.Position == item.Position - new Vector2(0, 1));
+                    if (otherItem == null || !otherItem.IsLookingAt(Direction.Up))
                     {
                         return false;
                     }
                 }
-                if ((item.DirectionFlags & 2) == 2) // item is looking left
+                if (item.IsLookingAt(Direction.Left))
                 {
-                    var otherItem = items.FirstOrDefault(x => x.Position == new Vector2(item.Position.X - 1, item.Position.Y));
-                    if (otherItem == null || (otherItem.DirectionFlags & 1) != 1) // other item should exist and be looking right
+                    var otherItem = items.FirstOrDefault(x => x.Position == item.Position - new Vector2(1, 0));
+                    if (otherItem == null || !otherItem.IsLookingAt(Direction.Right))
                     {
                         return false;
                     }
                 }
-                if ((item.DirectionFlags & 1) == 1) // item is looking right
+                if (item.IsLookingAt(Direction.Right))
                 {
-                    var otherItem = items.FirstOrDefault(x => x.Position == new Vector2(item.Position.X + 1, item.Position.Y));
-                    if (otherItem == null || (otherItem.DirectionFlags & 2) != 2) // other item should exist and be looking left
+                    var otherItem = items.FirstOrDefault(x => x.Position == item.Position + new Vector2(1, 0));
+                    if (otherItem == null || !otherItem.IsLookingAt(Direction.Left))
                     {
                         return false;
                     }
@@ -83,6 +83,133 @@ namespace InfinityLoopSolver
             ForEach(items[0], items.Last());
 
             return items;
+        }
+
+        public static bool RemoveImpossibleConditions(List<IGameItem> items)
+        {
+            var changed = false;
+
+            foreach (var item in items)
+            {
+                IGameItem otherItem;
+                var newDirs = new List<byte>();
+                foreach (var dir in item.PossibleDirections)
+                {
+                    if (dir.IsLookingAt(Direction.Up))
+                    {
+                        if ((otherItem = items.FirstOrDefault(x => x.Position == item.Position + new Vector2(0, 1))) == null)
+                        {
+                            changed = true;
+                            continue;
+                        }
+
+                        if (!otherItem.CanBeLookingAt(Direction.Down))
+                        {
+                            changed = true;
+                            continue;
+                        }
+                    }
+
+                    if (dir.IsLookingAt(Direction.Down))
+                    {
+                        if ((otherItem = items.FirstOrDefault(x => x.Position == item.Position - new Vector2(0, 1))) == null)
+                        {
+                            changed = true;
+                            continue;
+                        }
+
+                        if (!otherItem.CanBeLookingAt(Direction.Up))
+                        {
+                            changed = true;
+                            continue;
+                        }
+                    }
+
+                    if (dir.IsLookingAt(Direction.Right))
+                    {
+                        if ((otherItem = items.FirstOrDefault(x => x.Position == item.Position + new Vector2(1, 0))) == null)
+                        {
+                            changed = true;
+                            continue;
+                        }
+
+                        if (!otherItem.CanBeLookingAt(Direction.Left))
+                        {
+                            changed = true;
+                            continue;
+                        }
+                    }
+
+                    if (dir.IsLookingAt(Direction.Left))
+                    {
+                        if ((otherItem = items.FirstOrDefault(x => x.Position == item.Position - new Vector2(1, 0))) == null)
+                        {
+                            changed = true;
+                            continue;
+                        }
+
+                        if (!otherItem.CanBeLookingAt(Direction.Right))
+                        {
+                            changed = true;
+                            continue;
+                        }
+                    }
+
+                    newDirs.Add(dir);
+                }
+                item.PossibleDirections = newDirs.ToArray();
+            }
+
+            foreach (var item in items.Where(x => x.PossibleDirections.Length == 1))
+            {
+                IGameItem otherItem;
+                if (item.CanBeLookingAt(Direction.Up))
+                {
+                    otherItem = items.First(x => x.Position == item.Position + new Vector2(0, 1));
+                    var list = otherItem.PossibleDirections.ToList();
+                    list.RemoveAll(x => !x.IsLookingAt(Direction.Down));
+                    if (!list.SequenceEqual(otherItem.PossibleDirections))
+                    {
+                        changed = true;
+                    }
+                    otherItem.PossibleDirections = list.ToArray();
+                }
+                if (item.CanBeLookingAt(Direction.Down))
+                {
+                    otherItem = items.First(x => x.Position == item.Position - new Vector2(0, 1));
+                    var list = otherItem.PossibleDirections.ToList();
+                    list.RemoveAll(x => !x.IsLookingAt(Direction.Up));
+                    if (!list.SequenceEqual(otherItem.PossibleDirections))
+                    {
+                        changed = true;
+                    }
+                    otherItem.PossibleDirections = list.ToArray();
+                }
+                if (item.CanBeLookingAt(Direction.Left))
+                {
+                    otherItem = items.First(x => x.Position == item.Position - new Vector2(1, 0));
+                    var list = otherItem.PossibleDirections.ToList();
+                    list.RemoveAll(x => !x.IsLookingAt(Direction.Right));
+                    if (!list.SequenceEqual(otherItem.PossibleDirections))
+                    {
+                        changed = true;
+                    }
+                    otherItem.PossibleDirections = list.ToArray();
+                }
+                if (item.CanBeLookingAt(Direction.Right))
+                {
+                    otherItem = items.First(x => x.Position == item.Position + new Vector2(1, 0));
+                    var list = otherItem.PossibleDirections.ToList();
+                    list.RemoveAll(x => !x.IsLookingAt(Direction.Left));
+                    if (!list.SequenceEqual(otherItem.PossibleDirections))
+                    {
+                        changed = true;
+                    }
+                    otherItem.PossibleDirections = list.ToArray();
+                }
+            }
+
+            return changed;
         }
     }
 }

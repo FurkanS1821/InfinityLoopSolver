@@ -9,18 +9,13 @@ namespace InfinityLoopSolver.GameItems
         public override Vector2 Position { get; set; }
         public override byte DirectionFlags { get; set; }
 
-        public override byte[] PossibleDirections => new byte[]
-        {
-            11, // up, left, right
-            13, // up, down, right
-            7, // down, left, right
-            14 // up, down, left
-        };
+        public override byte[] PossibleDirections { get; set; }
 
         public override uint ItemId { get; }
 
         public ThreeDirectionalThing(Vector2 position, byte bitfield = 0)
         {
+            PossibleDirections = new byte[] {11, 13, 7, 14};
             Position = position;
             DirectionFlags = PossibleDirections.Contains(bitfield) ? bitfield : PossibleDirections[0];
             ItemId = Extensions.GetNewId();

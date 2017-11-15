@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Media;
 using System.Numerics;
+using System.Threading;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
@@ -32,8 +33,9 @@ namespace InfinityLoopSolver
 
             foreach (var item in GameItems)
             {
-                item.Position = new Vector2(item.Position.X, item.Position.Y + 1);
+                item.Position += new Vector2(0, 1);
             }
+            UpdateButtonsImages();
         }
 
         private void MoveDownButton_OnClick(object sender, RoutedEventArgs e)
@@ -46,8 +48,9 @@ namespace InfinityLoopSolver
 
             foreach (var item in GameItems)
             {
-                item.Position = new Vector2(item.Position.X, item.Position.Y - 1);
+                item.Position -= new Vector2(0, 1);
             }
+            UpdateButtonsImages();
         }
 
         private void MoveRightButton_OnClick(object sender, RoutedEventArgs e)
@@ -60,8 +63,9 @@ namespace InfinityLoopSolver
 
             foreach (var item in GameItems)
             {
-                item.Position = new Vector2(item.Position.X + 1, item.Position.Y);
+                item.Position += new Vector2(1, 0);
             }
+            UpdateButtonsImages();
         }
 
         private void MoveLeftButton_OnClick(object sender, RoutedEventArgs e)
@@ -74,8 +78,9 @@ namespace InfinityLoopSolver
 
             foreach (var item in GameItems)
             {
-                item.Position = new Vector2(item.Position.X - 1, item.Position.Y);
+                item.Position -= new Vector2(1, 0);
             }
+            UpdateButtonsImages();
         }
 
         private Button GetButtonFromPosition(Vector2 position)
@@ -85,8 +90,7 @@ namespace InfinityLoopSolver
                 return null;
             }
 
-            var button = GameBoard.FindName($"GameItemButton_{position.X}_{position.Y}") as Button;
-            return button;
+            return GameBoard.FindName($"GameItemButton_{position.X}_{position.Y}") as Button;
         }
 
         private Vector2 GetPositionFromButton(Button button)
@@ -112,7 +116,7 @@ namespace InfinityLoopSolver
             foreach (var item in GameItems)
             {
                 var button = GetButtonFromPosition(item.Position);
-                var resourceUri = new Uri($"Resources/{item.GetType().ToString().Split('.').Last()}-{item.DirectionFlags}.png", UriKind.Relative);
+                var resourceUri = new Uri($"Resources/{item.DirectionFlags}.png", UriKind.Relative);
                 var stream = Application.GetResourceStream(resourceUri);
                 var temp = BitmapFrame.Create(stream.Stream);
                 var brush = new ImageBrush {ImageSource = temp};
@@ -199,13 +203,53 @@ namespace InfinityLoopSolver
             {
                 possibilities *= item.PossibleDirections.Length;
             }
-            MessageBox.Show($"There are {possibilities} possibilities on this. Calculation will start as soon as you press OK.");
+
+            while (Solver.RemoveImpossibleConditions(GameItems)) ;
+            BigInteger possibleCount = 1;
+            foreach (var item in GameItems)
+            {
+                possibleCount *= item.PossibleDirections.Length;
+            }
+
+            var result = MessageBox.Show($"There {(possibilities == 1 ? "is" : "are")} {possibilities} total possibilities on this, but our ultra smart system removed impossible ones and there {(possibleCount == 1 ? "is" : "are")} only {possibleCount} left. Calculation will start as soon as you press OK.", "Information", MessageBoxButton.OKCancel);
+
+            if (result == MessageBoxResult.Cancel)
+            {
+                goto reset;
+            }
+
             GameItems = Solver.GetPassingCondition(GameItems);
             if (!Solver.GetIfComplete(GameItems))
             {
                 MessageBox.Show("This is some impossible bullshit.");
             }
             UpdateButtonsImages();
+
+            reset:
+            // Reset possible directions
+            foreach (var item in GameItems)
+            {
+                if (item is TwoDirectionalThing)
+                {
+                    item.PossibleDirections = new byte[] { 9, 5, 6, 10 };
+                }
+                else if (item is StraightThing)
+                {
+                    item.PossibleDirections = new byte[] { 12, 3 };
+                }
+                else if (item is FourDirectionalThing)
+                {
+                    item.PossibleDirections = new byte[] { 15 };
+                }
+                else if (item is OneDirectionalThing)
+                {
+                    item.PossibleDirections = new byte[] { 8, 1, 4, 2 };
+                }
+                else if (item is ThreeDirectionalThing)
+                {
+                    item.PossibleDirections = new byte[] { 11, 13, 7, 14 };
+                }
+            }
         }
 
         private void ClearAllButton_OnClick(object sender, RoutedEventArgs e)
